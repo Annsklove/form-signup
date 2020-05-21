@@ -1,0 +1,7 @@
+@mixin mainFont ($size: 14px, $lineHt: 18px, $color: $mainColorText, $fWeight: 500) {
+    font-size: $size;
+    line-height: $lineHt;
+    color: $color;
+    font-family: 'Gotham', Arial, Helvetica, sans-serif;
+    font-weight: $fWeight;
+}

@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- bootstrap-4.0.0 -->
+    <link rel="stylesheet" href="vendors/bootstrap-4.0.0/css/bootstrap.min.css">
+    <!-- иконки - font-awesome-->
+    <link rel="stylesheet" href="font-awesome/css/font-awesome.min.css">
+
+    <!-- Мои стили-->
+    <link rel="stylesheet" href="css/style.css">
+
+    <title>Anna - GignUp Form</title>
+</head>
+
+<main class="">
+    <div class=" signUp">
+        <div class="signUp__imgBg">
+
+        </div>
+
+        <div class="signUp__formBlock">
+            <h1>Регистрация</h1>
+
+            <div class="signForm">
+                <form action="#" class="needs-validation" novalidate>
+                    <div>
+                        <div class="signForm__wrapInput">
+                            <label for="validationTooltip01">Ваше Имя</label>
+                            <input type="text" class="form-control" id="validationTooltip01" autofocus
+                                placeholder="Имя..." pattern="[a-zA-Zа-яА-ЯёЁ ]+" required>
+                            <div class="valid-feedback"></div>
+                            <div class="invalid-feedback"></div>
+                        </div>
+
+                        <div class="signForm__wrapInput">
+                            <label for="email">Ваш Email</label>
+                            <input class="form-control" id="email" type="email"
+                                pattern="^([a-z0-9_-]+\.)*[a-z0-9_-]+@[a-z0-9_-]+(\.[a-z0-9_-]+)*\.[a-z]{2,6}$" required
+                                placeholder="Email...">
+                            <div class="valid-feedback"></div>
+                            <div class="invalid-feedback"></div>
+                        </div>
+
+                        <div class="signForm__wrapInput">
+                            <label for="url">URL Сайта</label>
+                            <input class="form-control" id="url" type="url" required
+                                pattern="^^((https?|ftp)\:\/\/)?([a-z0-9]{1})((\.[a-z0-9-])|([a-z0-9-]))*([a-z0-9]{1})\.([a-z]{2,6})(\/?)$"
+                                placeholder="URL...">
+                            <div class="valid-feedback"></div>
+                            <div class="invalid-feedback"></div>
+                        </div>
+
+                        <div class="signForm__wrapInput">
+                            <label for="phone">Номер Телефон</label>
+                            <input class="form-control" id="phone" type="tel" required
+                                pattern="\+7\s?[\(]{0,1}9[0-9]{2}[\)]{0,1}\s?\d{3}[-]{0,1}\d{2}[-]{0,1}\d{2}"
+                                placeholder="+7 (xxx) xxx-xx-xx">
+                            <div class="valid-feedback"></div>
+                            <div class="invalid-feedback"></div>
+                        </div>
+
+                        <div class="signForm__wrapInput">
+                            <label for="pass">Придумайте Пароль</label>
+                            <input class="form-control" id="pass" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,}" required
+                                type="password" placeholder="*****">
+                            <div class="valid-feedback"></div>
+                            <div class="invalid-feedback"></div>
+                        </div>
+                    </div>
+
+                    <div class="form-check custom-control custom-checkbox">
+                        <input type="checkbox" class="custom-control-input" id="customControlValidation1" required>
+                        <label class="custom-control-label" for="customControlValidation1">
+                            Я согласен с <a href="#" title="">Условиями пользователя</a>
+                        </label>
+                        <div class="invalid-feedback">Вы должны согласиться перед отправкой</div>
+                    </div>
+
+                    <div class="btnForm">
+                        <input class="btnForm__submit" type="submit" value="Регистрация">
+                    </div>
+                </form>
+            </div>
+
+        </div>
+    </div>
+</main>
+
+<!-- Скрипт от bootstrap для валидации формы -->
+<script>
+    // Пример начального JavaScript для отключения отправки формы, если есть недопустимые поля
+    (function () {
+        'use strict';
+        window.addEventListener('load', function () {
+            // Получить все формы, к которым мы хотим применить пользовательские стили проверки Bootstrap
+            var forms = document.getElementsByClassName('needs-validation');
+            // Зациклите их и убрать подчинение
+            var validation = Array.prototype.filter.call(forms, function (form) {
+                form.addEventListener('submit', function (event) {
+                    if (form.checkValidity() === false) {
+                        event.preventDefault();
+                        event.stopPropagation();
+                    }
+                    form.classList.add('was-validated');
+                }, false);
+            });
+        }, false);
+    })();
+</script>
+
+<script src="vendors/jquery/jquery-3.2.1.min.js"></script>
+<script src="vendors/bootstrap-4.0.0/js/bootstrap.min.js"></script>
+
+<body>
+
+</body>
+
+</html>
